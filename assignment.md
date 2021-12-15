@@ -1,5 +1,5 @@
 1. What is the difference between Docker image and Docker container?
-    *                                                  <!-- answer -->
+    *                        yes                          <!-- answer -->
 
 2. What is the command to build a docker image named `cit384-final`?
     *                                                  <!-- answer -->
