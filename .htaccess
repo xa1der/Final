@@ -1,0 +1,23 @@
+AuthName "Protected Area"
+AuthType Basic
+AuthUserFile /home/submission.txt
+AuthGroupFile /dev/null
+
+SetEnvIf Request_URI .* noauth
+
+SetEnvIf Request_URI / !noauth
+
+<IfModule mod_authz_core.c>
+    <RequireAny>
+        Require env noauth
+        Require valid-user
+    </RequireAny>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    Order Deny,Allow
+    Deny from all
+    Satisfy any
+    Require valid-user
+    Allow from env=noauth
+</IfModule>
