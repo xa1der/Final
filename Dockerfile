@@ -43,7 +43,7 @@ RUN apt-get update && \
     openssl rsa -passin pass:x -in /etc/ssl/private/server.pass.key -out /etc/ssl/private/server.key && \
     rm /etc/ssl/private/server.pass.key && \
     openssl req -new -key /etc/ssl/private/server.key -out /etc/ssl/certs/server.csr \
-        -subj "/C=UK/ST=Warwickshire/L=Leamington/O=OrgName/OU=IT Department/CN=site1.internal" && \
+        -subj "/C=UK/ST=Warwickshire/L=Leamington/O=OrgName/OU=IT Department/CN=mywebcite.cit384/CN=special.cit384/CN=final.cit384" && \
     openssl x509 -req -days 365 -in /etc/ssl/certs/server.csr -signkey /etc/ssl/private/server.key -out /etc/ssl/certs/server.crt
 
 ###USER 1 Configurations #####
